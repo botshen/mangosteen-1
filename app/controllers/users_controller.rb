@@ -9,10 +9,16 @@ class UsersController < ApplicationController
   end
 
   def show
-       render json: {
-        name: "sssss",
-        email: "我爱夏天"
-      }
-    
+    user = User.find_by_id params[:id]
+    if user 
+      render json: user
+    else
+      head 404
+    end
+  end
+
+  def index
+    users = User.all
+    render json: users
   end
 end
