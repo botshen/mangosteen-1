@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def show
        render json: {
         name: "sssss",
-        email: "xxxxxxxx"
+        email: "我爱夏天"
       }
     
   end

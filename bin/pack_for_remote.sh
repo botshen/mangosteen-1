@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # 注意修改 user 和 ip
 user=mangosteen
 ip=101.201.101.172
@@ -9,7 +11,6 @@ current_dir=$(dirname $0)
 deploy_dir=/home/$user/deploys/$time
 gemfile=$current_dir/../Gemfile
 gemfile_lock=$current_dir/../Gemfile.lock
-vendor_cache_dir=$current_dir/../vendor/cache
 
 function title {
   echo 
@@ -21,17 +22,15 @@ function title {
 
 
 title '打包源代码为压缩文件'
-mkdir $cache_dir
-bundle cache
-tar --exclude="tmp/cache/*" --exclude="tmp/deploy_cache/*" -czv -f $dist *
+mkdir -p $cache_dir
+tar --exclude="tmp/cache/*" --exclude="vendor/cache/*" --exclude="tmp/deploy_cache/*" -czv -f $dist *
 title '创建远程目录'
-ssh $user@$ip "mkdir -p $deploy_dir/vendor"
+ssh $user@$ip "mkdir -p $deploy_dir"
 title '上传压缩文件'
 scp $dist $user@$ip:$deploy_dir/
 yes | rm $dist
 scp $gemfile $user@$ip:$deploy_dir/
 scp $gemfile_lock $user@$ip:$deploy_dir/
-scp -r $vendor_cache_dir $user@$ip:$deploy_dir/vendor/
 title '上传 Dockerfile'
 scp $current_dir/../config/host.Dockerfile $user@$ip:$deploy_dir/Dockerfile
 title '上传 setup 脚本'
