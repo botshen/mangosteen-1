@@ -1,5 +1,6 @@
-PATH
-  remote: vendor/rspec_api_documentation
+GIT
+  remote: https://gitee.com/bott/rspec_api_document_with_response_json.git
+  revision: f868d6474c2b8da8d2241fa2e1e762a6807c810e
   specs:
     rspec_api_documentation (6.1.0)
       activesupport (>= 3.0.0)

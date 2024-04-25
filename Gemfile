@@ -37,8 +37,7 @@ gem "bootsnap", require: false
 
 gem 'kaminari'
 
-gem 'rspec_api_documentation', path: './vendor/rspec_api_documentation'
-
+gem 'rspec_api_documentation', git: 'https://gitee.com/bott/rspec_api_document_with_response_json.git'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
