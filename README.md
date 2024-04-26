@@ -2,3 +2,8 @@ docker run -d      --name db-for-mangosteen      -e POSTGRES_USER=mangosteen    
 
 
 EDITOR="code --wait" bin/rails credentials:edit
+
+bin/rake docs:generate 
+
+open doc/api/index.html 
+
