@@ -7,3 +7,4 @@ bin/rake docs:generate
 
 open doc/api/index.html 
 
+bin/rails g model tag user:references name:string sign:string deleted_at:datetime
