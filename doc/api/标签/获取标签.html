@@ -110,27 +110,8 @@ table th, table td {
 
       <div class="article">
         <h2>获取标签</h2>
-        <h3>GET /api/v1/tags</h3>
+        <h3>GET /api/v1/tags/:id</h3>
 
-          <h3>Parameters</h3>
-          <table class="parameters table table-striped table-bordered table-condensed">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                    <span class="name">page</span>
-                </td>
-                <td>
-                  <span class="description">页码</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
 
           <h3>Response Fields</h3>
           <table class="response-fields table table-striped table-bordered table-condensed">
@@ -143,7 +124,7 @@ table th, table td {
             <tbody>
               <tr>
                 <td>
-                    <span class="name">resources[id]</span>
+                    <span class="name">resource[id]</span>
                 </td>
                 <td>
                   <span class="description">ID</span>
@@ -151,7 +132,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">resources[name]</span>
+                    <span class="name">resource[name]</span>
                 </td>
                 <td>
                   <span class="description">名称</span>
@@ -159,7 +140,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">resources[sign]</span>
+                    <span class="name">resource[sign]</span>
                 </td>
                 <td>
                   <span class="description">符号</span>
@@ -167,7 +148,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">resources[user_id]</span>
+                    <span class="name">resource[user_id]</span>
                 </td>
                 <td>
                   <span class="description">用户ID</span>
@@ -175,7 +156,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">resources[deleted_at]</span>
+                    <span class="name">resource[deleted_at]</span>
                 </td>
                 <td>
                   <span class="description">删除时间</span>
@@ -187,14 +168,14 @@ table th, table td {
           <h3>Request</h3>
 
             <h4>Headers</h4>
-            <pre class="request headers">Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNTMsImV4cCI6MTcxNDEyMzI0OH0.eC7t75nW1KFA0idB-fI84XVpcOuhOgiDuPcGaOiGVQg
+            <pre class="request headers">Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNTksImV4cCI6MTcxNDEyMzMxOH0.dds3otE1coNX_c3Wt65BBbZgaVi6-b1PmbT3JItMN9o
 Accept: application/json
 Content-Type: application/json
 Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /api/v1/tags</pre>
+          <pre class="request route highlight">GET /api/v1/tags/345</pre>
 
 
 
@@ -208,111 +189,23 @@ x-permitted-cross-domain-policies: none
 referrer-policy: strict-origin-when-cross-origin
 content-type: application/json; charset=utf-8
 vary: Accept
-etag: W/&quot;194ad21c7f05cd4dc33f56b563cc8a4c&quot;
+etag: W/&quot;a4550ff04094858220e34630423129ce&quot;
 cache-control: max-age=0, private, must-revalidate
-x-request-id: a64abca2-6a8a-46bc-8413-b51712600c80
-x-runtime: 0.003594
-content-length: 1509</pre>
+x-request-id: 11e15e19-d30f-494f-8334-993f5ea43fc7
+x-runtime: 0.002617
+content-length: 157</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;resources&quot;: [
-    {
-      &quot;id&quot;: 331,
-      &quot;user_id&quot;: 153,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2024-04-26T07:20:48.814Z&quot;,
-      &quot;updated_at&quot;: &quot;2024-04-26T07:20:48.814Z&quot;
-    },
-    {
-      &quot;id&quot;: 332,
-      &quot;user_id&quot;: 153,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2024-04-26T07:20:48.817Z&quot;,
-      &quot;updated_at&quot;: &quot;2024-04-26T07:20:48.817Z&quot;
-    },
-    {
-      &quot;id&quot;: 333,
-      &quot;user_id&quot;: 153,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2024-04-26T07:20:48.818Z&quot;,
-      &quot;updated_at&quot;: &quot;2024-04-26T07:20:48.818Z&quot;
-    },
-    {
-      &quot;id&quot;: 334,
-      &quot;user_id&quot;: 153,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2024-04-26T07:20:48.819Z&quot;,
-      &quot;updated_at&quot;: &quot;2024-04-26T07:20:48.819Z&quot;
-    },
-    {
-      &quot;id&quot;: 335,
-      &quot;user_id&quot;: 153,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2024-04-26T07:20:48.820Z&quot;,
-      &quot;updated_at&quot;: &quot;2024-04-26T07:20:48.820Z&quot;
-    },
-    {
-      &quot;id&quot;: 336,
-      &quot;user_id&quot;: 153,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2024-04-26T07:20:48.822Z&quot;,
-      &quot;updated_at&quot;: &quot;2024-04-26T07:20:48.822Z&quot;
-    },
-    {
-      &quot;id&quot;: 337,
-      &quot;user_id&quot;: 153,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2024-04-26T07:20:48.823Z&quot;,
-      &quot;updated_at&quot;: &quot;2024-04-26T07:20:48.823Z&quot;
-    },
-    {
-      &quot;id&quot;: 338,
-      &quot;user_id&quot;: 153,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2024-04-26T07:20:48.824Z&quot;,
-      &quot;updated_at&quot;: &quot;2024-04-26T07:20:48.824Z&quot;
-    },
-    {
-      &quot;id&quot;: 339,
-      &quot;user_id&quot;: 153,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2024-04-26T07:20:48.825Z&quot;,
-      &quot;updated_at&quot;: &quot;2024-04-26T07:20:48.825Z&quot;
-    },
-    {
-      &quot;id&quot;: 340,
-      &quot;user_id&quot;: 153,
-      &quot;name&quot;: &quot;x&quot;,
-      &quot;sign&quot;: &quot;x&quot;,
-      &quot;deleted_at&quot;: null,
-      &quot;created_at&quot;: &quot;2024-04-26T07:20:48.827Z&quot;,
-      &quot;updated_at&quot;: &quot;2024-04-26T07:20:48.827Z&quot;
-    }
-  ],
-  &quot;pager&quot;: {
-    &quot;page&quot;: 1,
-    &quot;per_page&quot;: 10,
-    &quot;count&quot;: 11
+  &quot;resource&quot;: {
+    &quot;id&quot;: 345,
+    &quot;user_id&quot;: 159,
+    &quot;name&quot;: &quot;x&quot;,
+    &quot;sign&quot;: &quot;x&quot;,
+    &quot;deleted_at&quot;: null,
+    &quot;created_at&quot;: &quot;2024-04-26T07:21:58.157Z&quot;,
+    &quot;updated_at&quot;: &quot;2024-04-26T07:21:58.157Z&quot;
   }
 }</pre>
       </div>
