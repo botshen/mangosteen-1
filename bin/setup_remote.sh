@@ -47,7 +47,7 @@ title 'app: docker build'
 docker build $root -t mangosteen:$version
 
 if [ "$(docker ps -aq -f name=^mangosteen-prod-1$)" ]; then
-  title 'app: docker rm'
+  title 'app: docker rm old-app-container'
   docker rm -f $container_name
 fi
 
@@ -70,7 +70,7 @@ case $ans in
 esac
 
 if [ "$(docker ps -aq -f name=^${nginx_container_name}$)" ]; then
-  title 'doc: docker rm'
+  title 'doc: docker rm nginx-old-container'
   docker rm -f $nginx_container_name
 fi
 
@@ -80,5 +80,8 @@ docker run -d -p 8080:80 \
            --name=$nginx_container_name \
            -v /home/$user/deploys/$version/api:/usr/share/nginx/html:ro \
            nginx:latest
+
+title   '清理未使用的docker资源'
+docker system prune -a -f
 
 title '全部执行完毕'

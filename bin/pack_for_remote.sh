@@ -42,3 +42,6 @@ title '上传版本号'
 ssh $user@$ip "echo $time > $deploy_dir/version"
 title '执行远程脚本'
 ssh $user@$ip "export version=$time; /bin/bash $deploy_dir/setup_remote.sh"
+title '保留最近的3次部署目录'
+ssh $user@$ip "ls -t /home/$user/deploys/ | tail -n +4 | xargs -I {} rm -rf /home/$user/deploys/{}"
+
